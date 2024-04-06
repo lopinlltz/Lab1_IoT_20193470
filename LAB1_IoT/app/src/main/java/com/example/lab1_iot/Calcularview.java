@@ -1,8 +1,11 @@
 package com.example.lab1_iot;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,14 +16,24 @@ public class Calcularview extends AppCompatActivity implements View.OnClickListe
     private TextView textViewOperation;
     private TextView textViewResult;
     private StringBuilder currentNumber;
+    private char operator;
     private double operand1;
     private double operand2;
-    private char operator;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calcular_main);
+
+        ImageButton buttonBack = findViewById(R.id.buttonBack);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Calcularview.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         textViewScreen = findViewById(R.id.textViewScreen);
         textViewOperation = findViewById(R.id.textViewOperation);

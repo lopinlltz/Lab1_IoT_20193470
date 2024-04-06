@@ -47,34 +47,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        if (v.getId() == R.id.textView2) {
-            getMenuInflater().inflate(R.menu.context_menu, menu);
-        }
+
+        menu.setHeaderTitle("Cambia el color");
+        menu.add(0, v.getId(), 0, "Azul");
+        menu.add(0, v.getId(), 0, "Verde");
+        menu.add(0, v.getId(), 0, "Rojo");
     }
 
     @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
+    public boolean onContextItemSelected(MenuItem item) {
 
         TextView textViewTeleMath = findViewById(R.id.textView2);
-        int colorResId;
 
-        switch (id) {
-            case R.id.colorblue:
-                colorResId = R.color.blue;
-                break;
-            case R.id.colorgreen:
-                colorResId = R.color.green;
-                break;
-            case R.id.colorred:
-                colorResId = R.color.red;
-                break;
-            default:
-                return super.onContextItemSelected(item);
+        if(item.getTitle().equals("Blue")) {
+            textViewTeleMath.setTextColor(Color.BLUE);
+            return true;
         }
-        textViewTeleMath.setTextColor(ContextCompat.getColor(this, colorResId));
-
-        return true;
+        else if(item.getTitle().equals("Green")) {
+            textViewTeleMath.setTextColor(Color.GREEN);
+            return true;
+        }
+        else if(item.getTitle().equals("Red")) {
+            textViewTeleMath.setTextColor(Color.RED);
+            return true;
+        }
+        else {
+            return super.onContextItemSelected(item);
+        }
     }
 
 }
