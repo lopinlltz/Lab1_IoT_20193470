@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-
         menu.setHeaderTitle("Cambia el color");
         menu.add(0, v.getId(), 0, "Azul");
         menu.add(0, v.getId(), 0, "Verde");

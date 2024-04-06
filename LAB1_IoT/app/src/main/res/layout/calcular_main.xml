@@ -3,15 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Fila A: Operación actual -->
     <View
         android:id="@+id/backgroundView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/textViewOperation"
-        android:layout_alignBottom="@id/textViewOperation"
-        android:background="@color/colorGray" />
-
+        android:background="@color/colorGray"
+        android:layout_alignTop="@id/buttonBack"
+        android:layout_alignBottom="@id/buttonBack" />
 
     <ImageButton
         android:id="@+id/buttonBack"
@@ -23,6 +21,15 @@
         android:layout_marginTop="12dp"
         android:background="@null"
         android:src="@drawable/backicon" />
+    <TextView
+        android:id="@+id/textViewTelemath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telemath"
+        android:textSize="20sp"
+        android:layout_toEndOf="@id/buttonBack"
+        android:layout_alignTop="@id/buttonBack"
+        android:layout_marginStart="16dp" />
 
     <TextView
         android:id="@+id/textViewOperation"
@@ -45,7 +52,6 @@
         android:text="0"
         android:layout_above="@+id/textViewScreen" />
 
-    <!-- Pantalla de la calculadora -->
     <TextView
         android:id="@+id/textViewScreen"
         android:layout_width="match_parent"
@@ -57,7 +63,6 @@
         android:text="0"
         android:layout_above="@+id/row1" />
 
-    <!-- Fila 1 de botones -->
     <LinearLayout
         android:id="@+id/row1"
         android:layout_width="match_parent"
@@ -95,7 +100,6 @@
             android:text="+" />
     </LinearLayout>
 
-    <!-- Fila 2 de botones -->
     <LinearLayout
         android:id="@+id/row2"
         android:layout_width="match_parent"
